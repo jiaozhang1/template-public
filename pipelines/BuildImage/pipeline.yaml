@@ -492,4 +492,4 @@ spec:
             - action: show
               when:
                 name: buildImageEnabled
-                value: "true"
+                value: true

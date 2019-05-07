@@ -166,4 +166,4 @@ spec:
             description:
               zh-CN: "超时时间（秒）"
               en: "Timeout (s)"
-          required: "true"
+          required: true

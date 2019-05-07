@@ -3,20 +3,20 @@ kind: PipelineTemplate
 metadata:
   name: BuildImage
   annotations:
-    alauda.io/displayName.zh-CN: ZJ构建111
+    alauda.io/displayName.zh-CN: ZJ构建222
     alauda.io/displayName.en: Build docker image
     alauda.io/description.zh-CN: 克隆代码并构建镜像
     alauda.io/description.en: Clone code and builds a docker image
     alauda.io/readme.zh-CN: 克隆代码并构建镜像
     alauda.io/readme.en: Clone code and builds a docker image
-    alauda.io/version: v0.2.2
+    alauda.io/version: v0.2.3
     alauda.io/style.icon: build
   labels:
     category: CICD
     badges: scmdocker
 spec:
   engine: graph
-  withSCM: "true"
+  withSCM: true
   agent:
     label: docker
   options:
@@ -36,7 +36,7 @@ spec:
             - action: show
               when:
                 name: sonarScanEnabled
-                value: true
+                value: "true"
     - name: BuildImage
       tasks:
         - name: BuildImage

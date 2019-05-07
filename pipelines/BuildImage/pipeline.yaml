@@ -36,7 +36,7 @@ spec:
             - action: show
               when:
                 name: sonarScanEnabled
-                value: "true"
+                value: true
     - name: BuildImage
       tasks:
         - name: BuildImage

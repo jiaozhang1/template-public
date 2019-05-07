@@ -15,7 +15,7 @@ metadata:
     category: CICD
 spec:
   engine: graph
-  withSCM: "false"
+  withSCM: false
   options:
     timeout: 1800
   stages:

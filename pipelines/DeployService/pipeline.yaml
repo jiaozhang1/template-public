@@ -27,7 +27,7 @@ spec:
     tasks:
       DeployService:
         args:
-          useServiceYaml: "false"
+          useServiceYaml: false
   arguments:
     - displayName:
         zh-CN: "基本信息"

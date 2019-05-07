@@ -27,7 +27,7 @@ spec:
     tasks:
       DeployService:
         args:
-          useServiceYaml: false
+          useServiceYaml: "false"
   arguments:
     - displayName:
         zh-CN: "基本信息"
@@ -166,4 +166,4 @@ spec:
             description:
               zh-CN: "超时时间（秒）"
               en: "Timeout (s)"
-          required: "true"
+          required: true

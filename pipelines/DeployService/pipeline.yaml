@@ -3,13 +3,13 @@ kind: PipelineTemplate
 metadata:
   name: DeployService
   annotations:
-    alauda.io/displayName.zh-CN: ZJ更新服务9
+    alauda.io/displayName.zh-CN: ZJ更新服务10
     alauda.io/displayName.en: Update service
     alauda.io/description.zh-CN: 使用指定的镜像以及镜像版本等参数，更新指定集群的特定服务
     alauda.io/description.en: Update a service using docker image
     alauda.io/readme.zh-CN: 使用指定的镜像以及镜像版本等参数，更新指定集群的特定服务
     alauda.io/readme.en: Update a service using docker image
-    alauda.io/version: v0.3.11
+    alauda.io/version: v0.3.13
     alauda.io/style.icon: 
   labels:
     category: CICD

@@ -12,7 +12,7 @@ metadata:
     alauda.io/version: v0.3.4
     alauda.io/style.icon: 
   labels:
-    categoory: CICD
+    category: CICD
 spec:
   engine: graph
   withSCM: false

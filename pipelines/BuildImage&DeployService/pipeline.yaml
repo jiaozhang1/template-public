@@ -16,23 +16,6 @@ metadata:
 spec:
   engine: graph
   withSCM: true
-  stages:
-    - name: Clone
-      tasks:
-        - name: Clone
-          type: public/clone
-    - name: BuildImage
-      tasks:
-        - name: BuildImage
-          type: public/alaudaBuildImage
-          options:
-            timeout: 3600
-    - name: DeployService
-      tasks:
-        - name: DeployService
-          type: public/alaudaDeployService
-          options:
-            timeout: 3600
   arguments:
     - displayName:
         zh-CN: "基本信息"

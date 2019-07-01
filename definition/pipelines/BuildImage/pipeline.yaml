@@ -3,13 +3,13 @@ kind: PipelineTemplate
 metadata:
   name: BuildImage
   annotations:
-    alauda.io/displayName.zh-CN: ZJ构建222
+    alauda.io/displayName.zh-CN: ZJ构建
     alauda.io/displayName.en: Build docker image
     alauda.io/description.zh-CN: 克隆代码并构建镜像
     alauda.io/description.en: Clone code and builds a docker image
     alauda.io/readme.zh-CN: 克隆代码并构建镜像
     alauda.io/readme.en: Clone code and builds a docker image
-    alauda.io/version: v0.2.4
+    alauda.io/version: v0.2.2
     alauda.io/style.icon: build
   labels:
     category: CICD
@@ -17,32 +17,21 @@ metadata:
 spec:
   engine: graph
   withSCM: true
+  stages:
+    - name: Clone
+      tasks:
+        - name: clone
+          kind: PipelineTaskTemplate 
+    - name: alaudawithoutCI
+      tasks:
+        - name: alaudawithoutCI
+          kind: PipelineTaskTemplate
+          options:
+            timeout: 3600
   agent:
     label: docker
   options:
     timeout: 5400
-  stages:
-    - name: Clone
-      tasks:
-        - name: Clone
-          type: public/clone
-    - name: CodeScan
-      tasks:
-        - name: CodeScan
-          type: public/alaudaCodeScan
-          options:
-            timeout: 7200
-          relation:
-            - action: show
-              when:
-                name: sonarScanEnabled
-                value: true
-    - name: BuildImage
-      tasks:
-        - name: BuildImage
-          type: public/alaudaBuildImage
-          options:
-            timeout: 3600
   arguments:
     - displayName:
         zh-CN: 配置SonarQube代码扫描
